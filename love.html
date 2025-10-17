@@ -1,0 +1,857 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Diwali - A Message of Love</title>
+    <style>
+        body {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            min-height: 100%;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+            font-family: 'Georgia', serif;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        html {
+            height: 100%;
+        }
+
+        .container {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            position: relative;
+        }
+
+        .title {
+            font-size: 3.5rem;
+            color: #ffd700;
+            text-align: center;
+            margin-bottom: 2rem;
+            text-shadow: 0 0 20px #ffa500, 0 0 40px #ff6b35;
+            animation: glow 2s ease-in-out infinite alternate;
+            font-weight: bold;
+        }
+
+        @keyframes glow {
+            from { text-shadow: 0 0 20px #ffd700, 0 0 40px #ffa500; }
+            to { text-shadow: 0 0 30px #ffd700, 0 0 60px #ffa500, 0 0 80px #ff6b35; }
+        }
+
+        .rangoli {
+            width: 280px;
+            height: 280px;
+            margin: 2rem auto;
+            position: relative;
+            animation: rotate 40s linear infinite;
+        }
+
+        .peacock-body {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 30px;
+            height: 60px;
+            background: linear-gradient(to bottom, #1e88e5, #0d47a1);
+            border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+            box-shadow: 0 0 15px rgba(30, 136, 229, 0.6);
+        }
+
+        .peacock-neck {
+            position: absolute;
+            top: -20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 15px;
+            height: 25px;
+            background: linear-gradient(to top, #1e88e5, #42a5f5);
+            border-radius: 50% 50% 30% 30%;
+        }
+
+        .peacock-head {
+            position: absolute;
+            top: -35px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 12px;
+            height: 12px;
+            background: #1e88e5;
+            border-radius: 50%;
+        }
+
+        .peacock-beak {
+            position: absolute;
+            top: -38px;
+            left: 60%;
+            width: 8px;
+            height: 3px;
+            background: #ff9800;
+            border-radius: 0 50% 50% 0;
+        }
+
+        .peacock-feathers {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .feather {
+            position: absolute;
+            width: 80px;
+            height: 25px;
+            border-radius: 50px;
+            transform-origin: 10px 12px;
+        }
+
+        .feather::before {
+            content: '';
+            position: absolute;
+            top: 2px;
+            right: 2px;
+            width: 15px;
+            height: 15px;
+            border-radius: 50%;
+            background: radial-gradient(circle, #ffd700, #ff9800);
+            box-shadow: 0 0 8px rgba(255, 215, 0, 0.8);
+        }
+
+        .feather:nth-child(1) { 
+            transform: rotate(-60deg) translateX(-40px); 
+            background: linear-gradient(45deg, #4caf50, #81c784);
+        }
+        .feather:nth-child(2) { 
+            transform: rotate(-30deg) translateX(-45px); 
+            background: linear-gradient(45deg, #2196f3, #64b5f6);
+        }
+        .feather:nth-child(3) { 
+            transform: rotate(0deg) translateX(-50px); 
+            background: linear-gradient(45deg, #9c27b0, #ba68c8);
+        }
+        .feather:nth-child(4) { 
+            transform: rotate(30deg) translateX(-45px); 
+            background: linear-gradient(45deg, #ff5722, #ff8a65);
+        }
+        .feather:nth-child(5) { 
+            transform: rotate(60deg) translateX(-40px); 
+            background: linear-gradient(45deg, #ffc107, #ffeb3b);
+        }
+        .feather:nth-child(6) { 
+            transform: rotate(90deg) translateX(-35px); 
+            background: linear-gradient(45deg, #e91e63, #f06292);
+        }
+        .feather:nth-child(7) { 
+            transform: rotate(120deg) translateX(-40px); 
+            background: linear-gradient(45deg, #00bcd4, #4dd0e1);
+        }
+        .feather:nth-child(8) { 
+            transform: rotate(150deg) translateX(-45px); 
+            background: linear-gradient(45deg, #8bc34a, #aed581);
+        }
+        .feather:nth-child(9) { 
+            transform: rotate(180deg) translateX(-50px); 
+            background: linear-gradient(45deg, #ff9800, #ffb74d);
+        }
+        .feather:nth-child(10) { 
+            transform: rotate(210deg) translateX(-45px); 
+            background: linear-gradient(45deg, #673ab7, #9575cd);
+        }
+        .feather:nth-child(11) { 
+            transform: rotate(240deg) translateX(-40px); 
+            background: linear-gradient(45deg, #f44336, #ef5350);
+        }
+        .feather:nth-child(12) { 
+            transform: rotate(270deg) translateX(-35px); 
+            background: linear-gradient(45deg, #009688, #4db6ac);
+        }
+
+        .rangoli-dots {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .dot {
+            position: absolute;
+            width: 6px;
+            height: 6px;
+            background: #ffd700;
+            border-radius: 50%;
+            box-shadow: 0 0 8px rgba(255, 215, 0, 0.8);
+        }
+
+        .dot:nth-child(1) { top: -100px; left: -3px; }
+        .dot:nth-child(2) { top: -70px; left: 70px; }
+        .dot:nth-child(3) { top: 0; left: 97px; }
+        .dot:nth-child(4) { top: 70px; left: 70px; }
+        .dot:nth-child(5) { top: 97px; left: -3px; }
+        .dot:nth-child(6) { top: 70px; left: -76px; }
+        .dot:nth-child(7) { top: 0; left: -103px; }
+        .dot:nth-child(8) { top: -70px; left: -76px; }
+
+        .rangoli-outer-ring {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 240px;
+            height: 240px;
+            border: 2px solid transparent;
+            border-radius: 50%;
+            background: conic-gradient(from 0deg, #ff1744, #ffd700, #4caf50, #2196f3, #9c27b0, #ff9800, #ff1744);
+            background-clip: border-box;
+            -webkit-background-clip: border-box;
+        }
+
+        .rangoli-outer-ring::before {
+            content: '';
+            position: absolute;
+            top: 2px;
+            left: 2px;
+            right: 2px;
+            bottom: 2px;
+            background: transparent;
+            border-radius: 50%;
+        }
+
+        .peacock-crown {
+            position: absolute;
+            top: -45px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .crown-feather {
+            position: absolute;
+            width: 3px;
+            height: 15px;
+            background: linear-gradient(to top, #1e88e5, #ffd700);
+            border-radius: 50% 50% 0 0;
+        }
+
+        .crown-feather:nth-child(1) { transform: rotate(-20deg) translateX(-8px); }
+        .crown-feather:nth-child(2) { transform: rotate(0deg); }
+        .crown-feather:nth-child(3) { transform: rotate(20deg) translateX(8px); }
+
+        @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        .diyas-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 2rem;
+            margin: 3rem 0;
+            max-width: 600px;
+        }
+
+        .diya {
+            width: 80px;
+            height: 60px;
+            position: relative;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .diya:hover {
+            transform: scale(1.1);
+        }
+
+        .diya-base {
+            width: 80px;
+            height: 40px;
+            background: linear-gradient(45deg, #8d4004, #d2691e);
+            border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+            position: relative;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+        }
+
+        .diya-flame {
+            width: 20px;
+            height: 30px;
+            background: linear-gradient(to top, #ff6b35, #ffd700, #fff);
+            border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+            position: absolute;
+            top: -25px;
+            left: 50%;
+            transform: translateX(-50%);
+            opacity: 0;
+            transition: opacity 0.5s ease;
+            animation: flicker 1.5s ease-in-out infinite alternate;
+        }
+
+        .diya.lit .diya-flame {
+            opacity: 1;
+        }
+
+        .diya.lit .diya-base {
+            box-shadow: 0 0 20px #ffa500, 0 4px 8px rgba(0,0,0,0.3);
+        }
+
+        @keyframes flicker {
+            0%, 100% { transform: translateX(-50%) scale(1); }
+            50% { transform: translateX(-50%) scale(1.1) rotate(2deg); }
+        }
+
+        .sparkles {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            overflow: hidden;
+        }
+
+        .sparkle {
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            background: #ffd700;
+            border-radius: 50%;
+            animation: sparkle 3s linear infinite;
+        }
+
+        @keyframes sparkle {
+            0% {
+                opacity: 0;
+                transform: translateY(100vh) scale(0);
+            }
+            10% {
+                opacity: 1;
+                transform: translateY(90vh) scale(1);
+            }
+            90% {
+                opacity: 1;
+                transform: translateY(10vh) scale(1);
+            }
+            100% {
+                opacity: 0;
+                transform: translateY(0) scale(0);
+            }
+        }
+
+        .quote {
+            max-width: 600px;
+            text-align: center;
+            font-size: 1.5rem;
+            color: #ffd700;
+            margin: 2rem 0;
+            padding: 2rem;
+            background: rgba(255, 215, 0, 0.1);
+            border-radius: 20px;
+            border: 2px solid rgba(255, 215, 0, 0.3);
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.8s ease;
+            line-height: 1.6;
+        }
+
+        .quote.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .instruction {
+            color: #ffa500;
+            font-size: 1.1rem;
+            text-align: center;
+            margin: 1rem 0;
+            opacity: 0.8;
+        }
+
+        .signature {
+            position: absolute;
+            bottom: 2rem;
+            right: 2rem;
+            color: #ffd700;
+            font-size: 1.2rem;
+            font-style: italic;
+            text-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+        }
+
+        .fireworks {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            overflow: hidden;
+        }
+
+        .firework {
+            position: absolute;
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            animation: firework 2s ease-out infinite;
+        }
+
+        @keyframes firework {
+            0% {
+                opacity: 1;
+                transform: scale(0);
+            }
+            50% {
+                opacity: 1;
+                transform: scale(1);
+            }
+            100% {
+                opacity: 0;
+                transform: scale(1.5);
+            }
+        }
+
+        .rocket {
+            position: absolute;
+            width: 4px;
+            height: 20px;
+            background: linear-gradient(to top, #ff6b35, #ffd700);
+            border-radius: 50% 50% 0 0;
+            animation: rocket-launch 3s ease-out forwards;
+        }
+
+        @keyframes rocket-launch {
+            0% {
+                transform: translateY(0) scale(1);
+                opacity: 1;
+            }
+            70% {
+                transform: translateY(-400px) scale(1.2);
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(-450px) scale(0);
+                opacity: 0;
+            }
+        }
+
+        .rocket-trail {
+            position: absolute;
+            width: 2px;
+            height: 100px;
+            background: linear-gradient(to bottom, transparent, #ffd700, #ff6b35);
+            border-radius: 50%;
+            animation: trail-fade 3s ease-out forwards;
+        }
+
+        @keyframes trail-fade {
+            0% {
+                opacity: 0.8;
+                height: 0px;
+            }
+            50% {
+                opacity: 1;
+                height: 150px;
+            }
+            100% {
+                opacity: 0;
+                height: 200px;
+            }
+        }
+
+        .cracker-burst {
+            position: absolute;
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            animation: cracker-explode 1.5s ease-out forwards;
+        }
+
+        @keyframes cracker-explode {
+            0% {
+                transform: scale(0);
+                opacity: 1;
+            }
+            30% {
+                transform: scale(3);
+                opacity: 1;
+            }
+            100% {
+                transform: scale(6);
+                opacity: 0;
+            }
+        }
+
+        .sparkler {
+            position: absolute;
+            width: 3px;
+            height: 3px;
+            border-radius: 50%;
+            animation: sparkler-dance 2s linear infinite;
+        }
+
+        @keyframes sparkler-dance {
+            0% {
+                transform: translateY(0) rotate(0deg);
+                opacity: 1;
+            }
+            25% {
+                transform: translateY(-20px) rotate(90deg);
+                opacity: 0.8;
+            }
+            50% {
+                transform: translateY(-10px) rotate(180deg);
+                opacity: 1;
+            }
+            75% {
+                transform: translateY(-30px) rotate(270deg);
+                opacity: 0.6;
+            }
+            100% {
+                transform: translateY(0) rotate(360deg);
+                opacity: 1;
+            }
+        }
+
+        .fountain-spark {
+            position: absolute;
+            width: 2px;
+            height: 15px;
+            background: linear-gradient(to top, #ff6b35, #ffd700, #fff);
+            border-radius: 50%;
+            animation: fountain-spray 2s ease-out infinite;
+        }
+
+        @keyframes fountain-spray {
+            0% {
+                transform: translateY(0) scale(1);
+                opacity: 1;
+            }
+            50% {
+                transform: translateY(-80px) scale(0.8);
+                opacity: 0.8;
+            }
+            100% {
+                transform: translateY(-120px) scale(0.3);
+                opacity: 0;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .title {
+                font-size: 2.5rem;
+            }
+            
+            .diyas-container {
+                gap: 1.5rem;
+            }
+            
+            .diya {
+                width: 60px;
+                height: 45px;
+            }
+            
+            .diya-base {
+                width: 60px;
+                height: 30px;
+            }
+            
+            .quote {
+                font-size: 1.2rem;
+                padding: 1.5rem;
+            }
+            
+            .signature {
+                position: static;
+                text-align: center;
+                margin-top: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="sparkles" id="sparkles"></div>
+    <div class="fireworks" id="fireworks"></div>
+    
+    <div class="container">
+        <h1 class="title">✨ Happy Diwali ✨</h1>
+        
+        <div class="rangoli">
+            <div class="rangoli-outer-ring"></div>
+            <div class="peacock-feathers">
+                <div class="feather"></div>
+                <div class="feather"></div>
+                <div class="feather"></div>
+                <div class="feather"></div>
+                <div class="feather"></div>
+                <div class="feather"></div>
+                <div class="feather"></div>
+                <div class="feather"></div>
+                <div class="feather"></div>
+                <div class="feather"></div>
+                <div class="feather"></div>
+                <div class="feather"></div>
+            </div>
+            <div class="rangoli-dots">
+                <div class="dot"></div>
+                <div class="dot"></div>
+                <div class="dot"></div>
+                <div class="dot"></div>
+                <div class="dot"></div>
+                <div class="dot"></div>
+                <div class="dot"></div>
+                <div class="dot"></div>
+            </div>
+            <div class="peacock-body">
+                <div class="peacock-neck"></div>
+                <div class="peacock-head"></div>
+                <div class="peacock-beak"></div>
+                <div class="peacock-crown">
+                    <div class="crown-feather"></div>
+                    <div class="crown-feather"></div>
+                    <div class="crown-feather"></div>
+                </div>
+            </div>
+        </div>
+        
+        <p class="instruction">Click on each diya to light them up! 🪔</p>
+        
+        <div class="diyas-container">
+            <div class="diya" onclick="lightDiya(this)">
+                <div class="diya-base"></div>
+                <div class="diya-flame"></div>
+            </div>
+            <div class="diya" onclick="lightDiya(this)">
+                <div class="diya-base"></div>
+                <div class="diya-flame"></div>
+            </div>
+            <div class="diya" onclick="lightDiya(this)">
+                <div class="diya-base"></div>
+                <div class="diya-flame"></div>
+            </div>
+            <div class="diya" onclick="lightDiya(this)">
+                <div class="diya-base"></div>
+                <div class="diya-flame"></div>
+            </div>
+        </div>
+        
+        <div class="quote" id="quote">
+            “You are my favorite light in this world of a thousand diyas. Happy Diwali, my shining star✨💖"
+        </div>
+        
+        <div class="signature">With love for my LAVI💕</div>
+    </div>
+
+    <script>
+        let litDiyas = 0;
+        const totalDiyas = 4;
+
+        function lightDiya(diya) {
+            if (!diya.classList.contains('lit')) {
+                diya.classList.add('lit');
+                litDiyas++;
+                
+                // Create a small burst of sparkles when diya is lit
+                createSparklesBurst(diya);
+                
+                if (litDiyas === totalDiyas) {
+                    setTimeout(() => {
+                        document.getElementById('quote').classList.add('show');
+                        document.querySelector('.instruction').style.opacity = '0';
+                        createFireworks();
+                    }, 500);
+                }
+            }
+        }
+
+        function createSparklesBurst(diya) {
+            const rect = diya.getBoundingClientRect();
+            const sparklesContainer = document.getElementById('sparkles');
+            
+            for (let i = 0; i < 8; i++) {
+                const sparkle = document.createElement('div');
+                sparkle.className = 'sparkle';
+                sparkle.style.left = (rect.left + rect.width/2) + 'px';
+                sparkle.style.top = rect.top + 'px';
+                sparkle.style.animationDelay = (i * 0.1) + 's';
+                sparkle.style.animationDuration = '1s';
+                sparklesContainer.appendChild(sparkle);
+                
+                setTimeout(() => sparkle.remove(), 1000);
+            }
+        }
+
+        function createSparkles() {
+            const sparklesContainer = document.getElementById('sparkles');
+            const sparkle = document.createElement('div');
+            sparkle.className = 'sparkle';
+            sparkle.style.left = Math.random() * 100 + '%';
+            sparkle.style.animationDelay = Math.random() * 2 + 's';
+            sparkle.style.background = ['#ffd700', '#ffa500', '#ff6b35'][Math.floor(Math.random() * 3)];
+            sparklesContainer.appendChild(sparkle);
+            
+            setTimeout(() => sparkle.remove(), 3000);
+        }
+
+        let fireworksActive = false;
+        let rocketInterval, crackerInterval, sparklerInterval, fountainInterval, fireworkInterval;
+
+        function createFireworks() {
+            if (fireworksActive) return; // Prevent multiple instances
+            fireworksActive = true;
+            
+            // Start continuous rocket launches
+            rocketInterval = setInterval(() => {
+                createRocket();
+            }, 1500);
+            
+            // Start continuous crackers
+            crackerInterval = setInterval(() => {
+                for (let i = 0; i < 3; i++) {
+                    setTimeout(() => createCracker(), i * 200);
+                }
+            }, 1000);
+            
+            // Start continuous sparklers
+            sparklerInterval = setInterval(() => {
+                for (let i = 0; i < 5; i++) {
+                    setTimeout(() => createSparkler(), i * 100);
+                }
+            }, 800);
+            
+            // Start continuous fountain effects
+            fountainInterval = setInterval(() => {
+                createFountain();
+            }, 2000);
+            
+            // Start continuous fireworks bursts
+            fireworkInterval = setInterval(() => {
+                for (let i = 0; i < 8; i++) {
+                    setTimeout(() => {
+                        const firework = document.createElement('div');
+                        firework.className = 'firework';
+                        firework.style.left = Math.random() * 100 + '%';
+                        firework.style.top = Math.random() * 100 + '%';
+                        firework.style.background = ['#ffd700', '#ff6b35', '#ff1744', '#ff9800', '#9c27b0', '#4caf50'][Math.floor(Math.random() * 6)];
+                        firework.style.animationDelay = Math.random() * 1 + 's';
+                        document.getElementById('fireworks').appendChild(firework);
+                        
+                        setTimeout(() => firework.remove(), 2000);
+                    }, i * 150);
+                }
+            }, 1200);
+            
+            // Initial burst for immediate effect
+            for (let i = 0; i < 5; i++) {
+                setTimeout(() => createRocket(), i * 300);
+                setTimeout(() => createCracker(), i * 200);
+                setTimeout(() => createSparkler(), i * 100);
+            }
+            setTimeout(() => createFountain(), 500);
+        }
+
+        function createRocket() {
+            const rocket = document.createElement('div');
+            rocket.className = 'rocket';
+            rocket.style.left = Math.random() * 90 + 5 + '%';
+            rocket.style.bottom = '0px';
+            rocket.style.background = ['linear-gradient(to top, #ff6b35, #ffd700)', 'linear-gradient(to top, #ff1744, #ff9800)', 'linear-gradient(to top, #9c27b0, #ffd700)'][Math.floor(Math.random() * 3)];
+            
+            const trail = document.createElement('div');
+            trail.className = 'rocket-trail';
+            trail.style.left = '1px';
+            trail.style.bottom = '-50px';
+            rocket.appendChild(trail);
+            
+            document.getElementById('fireworks').appendChild(rocket);
+            
+            setTimeout(() => {
+                // Create explosion at the top
+                for (let i = 0; i < 12; i++) {
+                    const burst = document.createElement('div');
+                    burst.className = 'cracker-burst';
+                    burst.style.left = rocket.style.left;
+                    burst.style.top = '10%';
+                    burst.style.background = ['#ffd700', '#ff6b35', '#ff1744', '#ff9800', '#9c27b0'][Math.floor(Math.random() * 5)];
+                    burst.style.animationDelay = (i * 0.1) + 's';
+                    document.getElementById('fireworks').appendChild(burst);
+                    
+                    setTimeout(() => burst.remove(), 1500);
+                }
+            }, 2000);
+            
+            setTimeout(() => rocket.remove(), 3000);
+        }
+
+        function createCracker() {
+            const cracker = document.createElement('div');
+            cracker.className = 'cracker-burst';
+            cracker.style.left = Math.random() * 100 + '%';
+            cracker.style.top = Math.random() * 100 + '%';
+            cracker.style.background = ['#ffd700', '#ff6b35', '#ff1744', '#ff9800', '#9c27b0', '#4caf50'][Math.floor(Math.random() * 6)];
+            cracker.style.animationDelay = Math.random() * 0.5 + 's';
+            
+            document.getElementById('fireworks').appendChild(cracker);
+            setTimeout(() => cracker.remove(), 1500);
+        }
+
+        function createSparkler() {
+            const sparkler = document.createElement('div');
+            sparkler.className = 'sparkler';
+            sparkler.style.left = Math.random() * 100 + '%';
+            sparkler.style.top = Math.random() * 100 + '%';
+            sparkler.style.background = ['#ffd700', '#fff', '#ff6b35'][Math.floor(Math.random() * 3)];
+            sparkler.style.animationDelay = Math.random() * 1 + 's';
+            
+            document.getElementById('fireworks').appendChild(sparkler);
+            setTimeout(() => sparkler.remove(), 2000);
+        }
+
+        function createFountain() {
+            const fountainX = Math.random() * 80 + 10; // Keep away from edges
+            
+            for (let i = 0; i < 15; i++) {
+                setTimeout(() => {
+                    const spark = document.createElement('div');
+                    spark.className = 'fountain-spark';
+                    spark.style.left = fountainX + '%';
+                    spark.style.bottom = '20px';
+                    spark.style.transform = `rotate(${Math.random() * 60 - 30}deg)`;
+                    spark.style.animationDelay = Math.random() * 0.5 + 's';
+                    
+                    document.getElementById('fireworks').appendChild(spark);
+                    setTimeout(() => spark.remove(), 2000);
+                }, i * 100);
+            }
+        }
+
+        // Create continuous sparkles
+        setInterval(createSparkles, 800);
+        
+        // Create initial sparkles
+        for (let i = 0; i < 10; i++) {
+            setTimeout(createSparkles, i * 200);
+        }
+
+        // Clean up intervals when user leaves the page
+        window.addEventListener('beforeunload', function() {
+            if (rocketInterval) clearInterval(rocketInterval);
+            if (crackerInterval) clearInterval(crackerInterval);
+            if (sparklerInterval) clearInterval(sparklerInterval);
+            if (fountainInterval) clearInterval(fountainInterval);
+            if (fireworkInterval) clearInterval(fireworkInterval);
+        });
+
+        // Also clean up when page becomes hidden (mobile/tab switching)
+        document.addEventListener('visibilitychange', function() {
+            if (document.hidden && fireworksActive) {
+                if (rocketInterval) clearInterval(rocketInterval);
+                if (crackerInterval) clearInterval(crackerInterval);
+                if (sparklerInterval) clearInterval(sparklerInterval);
+                if (fountainInterval) clearInterval(fountainInterval);
+                if (fireworkInterval) clearInterval(fireworkInterval);
+                fireworksActive = false;
+            }
+        });
+    </script>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'98e2a3d4120fd8a9',t:'MTc2MDM5ODM4Ni4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>
